@@ -8,5 +8,6 @@ describe("Test tasks", () => {
         expect(longestSequence([0, 0, 0, 0])).toBe(1);
         expect(longestSequence([0])).toBe(1);
         expect(longestSequence([])).toBe(0);
+        expect(longestSequence([1, 0, 0, 1, 1, 1, 1])).toBe(5);
     });
 });

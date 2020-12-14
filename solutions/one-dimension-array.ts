@@ -10,11 +10,14 @@ export function longestSequence(array: number[]): number {
         return 1;
     for (let i = 0; i < array.length; i++) {
         if (array[i] === 0 && isFirstZero) isFirstZero = false;
-        if ((array[i] === 0 || i === array.length - 1) && !isFirstZero) {
+        if (array[i] === 0 && !isFirstZero) {
             isFirstZero = true;
             if (i - oldStart > maxSequence) maxSequence = i - oldStart;
             oldStart = newStart
             newStart = i + 1;
+        }
+        if (i === array.length - 1 && array[i] !== 0) {
+            if ((i  + 1 )- oldStart > maxSequence) maxSequence = (i + 1 ) - oldStart;
         }
     }
     return maxSequence;
