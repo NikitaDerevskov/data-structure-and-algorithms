@@ -1,6 +1,6 @@
 import { longestSequence } from "../solutions/one-dimension-array";
 
-describe("Test tasks", () => {
+describe("Run all tests", () => {
     test("One dimension array task", () => {
         expect(longestSequence([1, 1, 0, 1, 1, 0, 1, 0, 1, 1])).toBe(5);
         expect(longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 1])).toBe(7);
