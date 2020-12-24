@@ -20,9 +20,25 @@ class LinkedList<T> implements Iterable<T> {
         this.list = undefined;
     }
 
-    public size (): number { return 0 };
-    public isEmpty(): boolean { return false };
-    public addFront(data: T): void { };
+    public size (): number {
+        if (this.list) return this.list.size;
+        return 0;
+    };
+    public isEmpty(): boolean { return !this.list };
+    public addFront(data: T): void {
+        const newNode = new Node(data);
+        if (this.list) {
+            newNode.next = this.list.head;
+            this.list.head = newNode;
+            this.list.size++;
+        } else {
+            this.list = {
+                head: newNode,
+                tail: newNode,
+                size: 1
+            };
+        }
+    };
     public addBack(data: T): void { };
     public addAt(index: number, data: T): void { };
     public peekFront(): T { };
